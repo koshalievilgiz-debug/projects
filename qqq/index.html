@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Methods & Tools - Все Задания</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Web Methods and Tools - Практические Задания</h1>
+        <nav>
+            <button onclick="showSection(1)">1. Counter</button>
+            <button onclick="showSection(2)">2. Student Card</button>
+            <button onclick="showSection(3)">3. Contact Cards</button>
+            <button onclick="showSection(4)">4. Student Manager</button>
+            <button onclick="showSection(5)">5. Word Tracker</button>
+        </nav>
+    </header>
+
+    <!-- 1. Counter -->
+    <section id="sec1" class="section">
+        <h2>1. Counter Application</h2>
+        <div class="counter-container">
+            <div id="counter">0</div>
+            <div class="buttons">
+                <button id="decrease">−</button>
+                <button id="reset">Reset</button>
+                <button id="increase">+</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. Student Card Generator -->
+    <section id="sec2" class="section hidden">
+        <h2>2. Student Card Generator</h2>
+        <div class="form-group">
+            <input type="text" id="studentName" placeholder="Имя студента" />
+            <input type="text" id="studentGroup" placeholder="Группа (например: CS-21)" />
+            <button onclick="generateCard()">Создать карточку студента</button>
+        </div>
+        <div id="cardsContainer" class="cards"></div>
+    </section>
+
+    <!-- 3. Contact Cards -->
+    <section id="sec3" class="section hidden">
+        <h2>3. Contact Cards</h2>
+        <div class="form-group">
+            <input type="text" id="contactName" placeholder="Имя" />
+            <input type="text" id="contactPhone" placeholder="Телефон" />
+            <button onclick="addContact()">Добавить контакт</button>
+        </div>
+        <div id="contactsContainer" class="cards"></div>
+    </section>
+
+    <!-- 4. Student Manager -->
+    <section id="sec4" class="section hidden">
+        <h2>4. Student Manager</h2>
+        <form id="studentForm">
+            <input type="text" id="fullName" placeholder="ФИО" required />
+            <input type="text" id="group" placeholder="Группа" required />
+            <input type="number" id="grade" placeholder="Средний балл (0-100)" step="0.1" min="0" max="100" required />
+            <button type="submit">Добавить студента</button>
+        </form>
+        <input type="text" id="search" placeholder="Поиск по имени..." onkeyup="filterStudents()">
+        <table id="studentsTable">
+            <thead>
+                <tr><th>ФИО</th><th>Группа</th><th>Балл</th><th>Действие</th></tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </section>
+
+    <!-- 5. Word Knowledge Tracker -->
+    <section id="sec5" class="section hidden">
+        <h2>5. Word Knowledge Tracker</h2>
+        <div class="form-group">
+            <input type="text" id="word" placeholder="Английское слово" />
+            <input type="text" id="translation" placeholder="Перевод" />
+            <button onclick="addWord()">Добавить слово</button>
+            <button onclick="clearAllWords()" class="clear-btn">Очистить всё</button>
+        </div>
+        <div id="wordsContainer" class="cards"></div>
+    </section>
+
+    <script src="index.js"></script>
+</body>
+</html>
